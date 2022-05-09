@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arrList = [88, 12, 14, 1, 55, 18, 22, 63, 5, 76, 3, 49, 23, 17, 66];
+        let arr2 = [88, 12, 76, 3, 49, 18, 22, 63];
+
+
+        //const aaaaa = arrList.sort((a, b) => b - Math.random())  //简单乱序
+        console.log(aaaaa)
+        //shuffle([1, 2, 3, 4, 5, 6]);
+        console.log(formateList(arrList, arr2))
+
+        //对比去重排序
+        const formateList = (a, b) => {
+            const currentList = new Set(b);
+            const resultList = new Set();
+            a.map((item) => {
+                if (!currentList.has(item)) {
+                    resultList.add(item)
+                }
+                return null
+            })
+            return Array.from(resultList).sort((a, b) => a - b)
+        }
+
+        //洗牌、乱序算法
+        function shuffle(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                const index = Math.floor(Math.random() * (arr.length - i));
+                [arr[index], arr[i]] = [arr[i], arr[index]]
+
+            }
+
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>
